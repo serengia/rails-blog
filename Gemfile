@@ -70,3 +70,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "rufo", "~> 0.16.0"
+
+gem "erb-formatter", "~> 0.4.3"
