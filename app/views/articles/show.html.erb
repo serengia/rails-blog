@@ -2,3 +2,10 @@
 <p><strong>Title: </strong><%= @article&.title %></p>
 <h2>Description</h2>
 <p><%= @article&.description %></p>
+
+<%= link_to "Edit", edit_article_path(@article) %> |
+<%= link_to "Delete", article_path(@article), data: {
+                                                turbo_method: :delete,
+                                                turbo_confirm: "Are you sure?",
+                                              } %> |
+<%= link_to "Return To All Articles", articles_path %>
