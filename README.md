@@ -1,21 +1,18 @@
-# README
+### How to configure Boostrap 5 and Rails 7 for an existing Project
 
-Simple ruby blog
+1. Add the following to the GemFile
+   `gem 'sassc-rails'` # (after ruby and before gem rails) `gem 'bootstrap', '~> 5.2.0'` (after gem rails)
 
-- Ruby version: 7
+2. Navigate to the command line and run `bundle install`
 
-- System dependencies
+3. Navigate to your `app > asset > stylesheets` and change the file `application.css` to `application.scss` (Sass file)
 
-- Configuration
+4. Delete all the content of `application.scss` then write `@import "bootstrap";`
+5. For the Bootstrap js dependencies, navigate to `app>javascript>application.js` then add these before the `// Configure your import map...` :
 
-- Database creation
+```
+//= require popper
+//= require bootstrap-sprockets
+```
 
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+6. Boostrap 5 should now be working with the Rails 7.
